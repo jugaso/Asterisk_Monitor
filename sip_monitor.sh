@@ -6,8 +6,8 @@
 #**********************************************************
 #  crontab -e
 #  PATH=/usr/local/bin
-#  0 8 * * 1-5 /usr/local/bin/sip_monitore.sh 2>/dev/null
-#
+#  0 8 * * 1-5 /usr/local/bin/sip_monitor.sh 2>/dev/null
+#  Escrito por Júlio Gadioli Soares free to use!!!!
 
 LOG_PID="/var/log/asterisk/pid_log"
 LOG_SIP="/var/log/asterisk/accounts_log"
@@ -63,7 +63,7 @@ if [[ $PIDAST =~ $re ]]; then
 		fi
 		done
 elif [[ $PID_INFO =~ "PIDOFF" ]]; then
-		exit	
+	exit	
 else
 		`echo "PIDOFF" > $LOG_PID`;
 		`$PHP $SENDMAIL "SERVIDOR ASTERISK" "OFFLINE"`
