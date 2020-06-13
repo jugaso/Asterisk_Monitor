@@ -40,8 +40,8 @@ if [ -z $RESIP ]; then
 	    then
         	continue
 	else
-        `echo $sip $data>>${LOG_OFF}`
-        `sed -i -e "/$sip/d" $LOG_ONN`
+        	`echo $sip $data>>${LOG_OFF}`
+        	`sed -i -e "/$sip/d" $LOG_ONN`
 		`$PHP $SENDMAIL $sip "((Offiline))"`
 	fi
 else
