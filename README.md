@@ -1,1 +1,1 @@
-# Asterisk_Monitor is a solution for monitoring whether you have activated or inactivated accounts on asterisk, with sending email.
+# Asterisk_Monitor is a bash solution to monitor when service down and when accounts are logged in and out.
