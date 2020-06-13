@@ -34,7 +34,7 @@ function enviaemail($assunto,$msg,$destino)
 }
 if(! is_null($argv[1]))
 {
-  if( is_numeric($argv[1]))
+  if(! is_null($argv[1]))
   {
   require_once('class.phpmailer.php');
   $sip   =$argv[1];
