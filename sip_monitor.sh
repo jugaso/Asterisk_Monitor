@@ -9,9 +9,9 @@
 #  0 8 * * 1-5 /usr/local/bin/sip_monitore.sh 2>/dev/null
 #
 
-LOG_SIP="/var/log/asterisk/accounts_log.txt"
-LOG_ONN="/var/log/asterisk/online_log.txt"
-LOG_OFF="/var/log/asterisk/offline_log.txt"
+LOG_SIP="/var/log/asterisk/accounts_log"
+LOG_ONN="/var/log/asterisk/online_log"
+LOG_OFF="/var/log/asterisk/offline_log"
 SENDMAIL="/usr/local/bin/send_email.php"
 PHP=`which php`
 
@@ -23,7 +23,7 @@ if [ ! -f "$LOG_ONN" ]; then `umask 0; touch $LOG_ONN`
 fi
 if [ ! -f "$LOG_OFF" ]; then `umask 0; touch $LOG_OFF`
 fi
-
+`cat /dev/null > $LOG_SIP`
 `asterisk -x "sip show peers" 2>/dev/null | sed 1d | awk '{print $1}' | awk -F'/' '{print $1}' >> $LOG_SIP`
 tail -n 1 $LOG_SIP | wc -c | xargs -I {} truncate $LOG_SIP -s -{}
 
