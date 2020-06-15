@@ -22,7 +22,7 @@ function enviaemail($assunto,$msg,$destino)
     $mailer->Username = '----yourmail@domain.com-----';
     $mailer->Password = '************YOUR-PASSWORD************';
     $mailer->FromName = $assunto;
-    $mailer->From = 'Pode colocar qualquer nome aqui';
+    $mailer->From = '----yourmail@domain.com-----'; /*não obrigatório*/
     $mailer->AddAddress($destino);
     $mailer->Subject = $assunto;
     $mailer->Body = $mensagem;
